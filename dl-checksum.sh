@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=v0.1.1
+VER=v0.3.2
 DIR=~/Downloads
 MIRROR=https://github.com/rancher/rio/releases/download/$VER
 dl()
@@ -8,7 +8,7 @@ dl()
     PLATFORM=$2
 
     CHECKSUMS=sha256sum-$PLATFORM.txt
-    LCHECKSUMS=$DIR/rio-sha256sum-$PLATFORM.txt
+    LCHECKSUMS=$DIR/rio-sha256sum-$PLATFORM-$VER.txt
 
     if [ ! -e $LCHECKSUMS ]
     then
