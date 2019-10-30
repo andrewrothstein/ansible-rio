@@ -1,25 +1,26 @@
 #!/usr/bin/env sh
-VER=v0.3.2
+VER=${1:-v0.5.0}
 DIR=~/Downloads
 MIRROR=https://github.com/rancher/rio/releases/download/$VER
+
 dl()
 {
-    OS=$1
-    PLATFORM=$2
+    local os=$1
+    local arch=$2
 
-    CHECKSUMS=sha256sum-$PLATFORM.txt
-    LCHECKSUMS=$DIR/rio-sha256sum-$PLATFORM-$VER.txt
+    local checksums=sha256sum-$arch.txt
+    local lchecksums=$DIR/rio-sha256sum-$arch-$VER.txt
 
-    if [ ! -e $LCHECKSUMS ]
+    if [ ! -e $lchecksums ]
     then
-        wget -q -O $LCHECKSUMS $MIRROR/$CHECKSUMS
+        wget -q -O $lchecksums $MIRROR/$checksums
     fi
 
-    FILE=rio-$OS-$PLATFORM
-    URL=$MIRROR/$FILE
+    local file=rio-$os-$arch
+    local url=$MIRROR/$file
 
-    printf "    # %s\n" $URL
-    printf "    %s-%s: sha256:%s\n" $OS $PLATFORM `fgrep $FILE $LCHECKSUMS | awk '{print $1}'`
+    printf "    # %s\n" $url
+    printf "    %s-%s: sha256:%s\n" $os $arch `fgrep $file $lchecksums | awk '{print $1}'`
 }
 
 printf "  %s:\n" $VER

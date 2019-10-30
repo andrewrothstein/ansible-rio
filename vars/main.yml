@@ -1,5 +1,6 @@
 ---
 # vars file for rio
+rio_platform: '{{ rio_os }}-{{ rio_arch }}'
 rio_remote_exe: rio-{{ rio_platform }}
 rio_url: '{{ rio_mirror }}/{{ rio_ver }}/{{ rio_remote_exe }}'
 rio_checksum: '{{ rio_checksums[rio_ver][rio_platform] }}'
