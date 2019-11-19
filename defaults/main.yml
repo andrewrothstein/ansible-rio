@@ -1,7 +1,7 @@
 ---
 # defaults file for rio
 rio_mirror: https://github.com/rancher/rio/releases/download
-rio_ver: v0.5.0
+rio_ver: v0.6.0
 rio_os: linux
 rio_arch: amd64
 rio_install_dir: /usr/local/bin
@@ -39,3 +39,14 @@ rio_checksums:
     linux-arm64: sha256:029b92c0bb7b0b71d4ef529852f1d549700ccf391827fb1e5e62e231388af5a7
     # https://github.com/rancher/rio/releases/download/v0.5.0/rio-windows-amd64
     windows-amd64: sha256:0cb85cbe4bdcb9058584106ef8c6078e5658e793c9e2d47d5d8da13a6dfa7fc4
+  v0.6.0:
+    # https://github.com/rancher/rio/releases/download/v0.6.0/rio-darwin-amd64
+    darwin-amd64: sha256:cd0dbce95806c76c30ba6a4b901926e5a024975479320e93e81378f36ad0d839
+    # https://github.com/rancher/rio/releases/download/v0.6.0/rio-linux-amd64
+    linux-amd64: sha256:deb270259e90dd2c553428eee9a6f7131aaa8ca79b8ad3dd70a59286724fd81c
+    # https://github.com/rancher/rio/releases/download/v0.6.0/rio-linux-arm
+    linux-arm: sha256:ced5875e3c13cb1088ac799cbc3a63fbd9d24c4640fee881107c74c8e2d9dd34
+    # https://github.com/rancher/rio/releases/download/v0.6.0/rio-linux-arm64
+    linux-arm64: sha256:95a7ee9bf9e36b3d686a19d43bc1f5cc74c255ae0580c391bd3bd99707254354
+    # https://github.com/rancher/rio/releases/download/v0.6.0/rio-windows-amd64
+    windows-amd64: sha256:54d2f0c67238de50c7e9fdd57d72562119e6cc29a79511a65c761066c9594c3d
