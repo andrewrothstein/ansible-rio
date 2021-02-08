@@ -9,18 +9,18 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: download
+- name: downloading {{ rio_url }} to {{ rio_install_exe }}
   become: yes
   become_user: root
   get_url:
     url: '{{ rio_url }}'
-    dest: '{{ rio_install_dir }}/{{ rio_local_exe }}'
+    dest: '{{ rio_install_exe }}'
     checksum: '{{ rio_checksum }}'
     mode: 0755
-- name: link
+- name: linking {{ rio_install_link }} to {{ rio_install_exe }}
   become: yes
   become_user: root
   file:
-    src: '{{ rio_install_dir }}/{{ rio_local_exe }}'
-    dest: '{{ rio_install_dir }}/rio'
+    src: '{{ rio_install_exe }}'
+    dest: '{{ rio_install_link }}'
     state: link

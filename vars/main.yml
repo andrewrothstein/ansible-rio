@@ -5,3 +5,5 @@ rio_remote_exe: rio-{{ rio_platform }}
 rio_url: '{{ rio_mirror }}/{{ rio_ver }}/{{ rio_remote_exe }}'
 rio_checksum: '{{ rio_checksums[rio_ver][rio_platform] }}'
 rio_local_exe: rio-{{ rio_ver }}
+rio_install_exe: '{{ rio_install_dir }}/{{ rio_local_exe }}'
+rio_install_link: '{{ rio_install_dir }}/rio'
